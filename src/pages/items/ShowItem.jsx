@@ -44,7 +44,7 @@ const ShowItem = ({ loggedInStatus }) => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/v1/items/${id}`);
+        const response = await axios.get(`https://my-1store.herokuapp.com/api/v1/items/${id}`);
         setItem(response.data);
       } catch (error) {
         console.error(error);

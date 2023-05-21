@@ -35,7 +35,7 @@ const Registration = (props) => {
 
     axios
       .post(
-        "http://localhost:3000/api/v1/users",
+        "https://my-1store.herokuapp.com/api/v1/users",
         {
           user: {
             first_name: firstName,

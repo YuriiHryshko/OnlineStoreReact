@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../components/Auth';
 import AdminItems from './AdminItems';
 
-const API_URL = 'http://localhost:3000/api/v1/items';
+const API_URL = 'https://my-1store.herokuapp.com/api/v1/items';
 
 function Main({currentUser, loggedInStatus, handleLogout}) {
   const [searchTerm, setSearchTerm] = useState('');

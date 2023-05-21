@@ -10,7 +10,7 @@ const Cart = ({currentUser}) => {
 
   const handlePayment = async () => {
     try {
-      await axios.post("http://localhost:3000/api/v1/cart/pay", {
+      await axios.post("https://my-1store.herokuapp.com/api/v1/cart/pay", {
         cartItems: cartItems.map(item => ({ item_id: item.item_id, quantity: item.quantity })),
         total: calculateTotal(),
         user_id: currentUser.id,

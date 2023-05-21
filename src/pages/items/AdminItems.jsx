@@ -11,7 +11,7 @@ const AdminItems = ({ items }) => {
     }, [items]);
 
   const handleDelete = (itemId) => {
-    axios.delete(`http://localhost:3000/api/v1/items/${itemId}`)
+    axios.delete(`https://my-1store.herokuapp.com/api/v1/items/${itemId}`)
         .then(() => {
             const updatedItemList = itemList.filter((item) => item.id !== itemId);
             setItemList(updatedItemList);

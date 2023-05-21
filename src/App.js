@@ -24,7 +24,7 @@ function App() {
 
   const checkLoginStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/users/sign_in', { withCredentials: true });
+      const response = await axios.get('https://my-1store.herokuapp.com/api/v1/users/sign_in', { withCredentials: true });
       if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
         setLoggedInStatus('LOGGED_IN');
         setUser(response.data.user);
@@ -39,7 +39,7 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      await axios.delete('http://localhost:3000/api/v1/users/sign_out', { withCredentials: true });
+      await axios.delete('https://my-1store.herokuapp.com/api/v1/users/sign_out', { withCredentials: true });
       setLoggedInStatus('NOT_LOGGED_IN');
       setUser({});
     } catch (error) {

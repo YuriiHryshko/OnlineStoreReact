@@ -42,7 +42,7 @@ const Edit = ({ currentUser }) => {
     formData.append('current_password', ''); // Добавьте текущий пароль, если требуется для подтверждения изменений
 
     // Отправка запроса на обновление информации о пользователе с помощью Axios
-    axios.patch('http://localhost:3000/api/v1/users', formData)
+    axios.patch('https://my-1store.herokuapp.com/api/v1/users', formData)
       .then(response => {
         // Обработка успешного обновления информации о пользователе
         console.log('User information updated');

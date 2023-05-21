@@ -12,7 +12,7 @@ const Orders = ({currentUser}) => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/orders',{
+      const response = await axios.get('https://my-1store.herokuapp.com/api/v1/orders',{
         params: {
             user_id: currentUser.id,
         }

@@ -15,7 +15,7 @@ const EditUser = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/v1/users/${id}`);
+        const response = await axios.get(`https://my-1store.herokuapp.com/api/v1/users/${id}`);
         const { first_name, last_name, email, role } = response.data;
         setFirstName(first_name);
         setLastName(last_name);
@@ -40,7 +40,7 @@ const EditUser = () => {
     };
 
     axios
-      .put(`http://localhost:3000/api/v1/users/${id}`, updatedUser)
+      .put(`https://my-1store.herokuapp.com/api/v1/users/${id}`, updatedUser)
       .then((response) => {
         console.log(response.data);
         navigate('/users');

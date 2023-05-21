@@ -23,7 +23,7 @@ const Login = (props) => {
 
     axios
       .post(
-        "http://localhost:3000/api/v1/users/sign_in",
+        "https://my-1store.herokuapp.com/api/v1/users/sign_in",
         {
           user: {
             email: email,

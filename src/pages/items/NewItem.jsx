@@ -18,7 +18,7 @@ const NewItem = () => {
       description: description,
     };
 
-    axios.post('http://localhost:3000/api/v1/items', newItem)
+    axios.post('https://my-1store.herokuapp.com/api/v1/items', newItem)
       .then((response) => {
         console.log(response.data);
         navigate("/");

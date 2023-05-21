@@ -15,7 +15,7 @@ const OrderDetails = () => {
   const { id } = useParams();
   const fetchOrderDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/orders/${id}`);
+      const response = await axios.get(`https://my-1store.herokuapp.com/api/v1/orders/${id}`);
       const { order, order_items, item_details } = response.data;
       setOrder(order);
       setOrderItems(order_items);

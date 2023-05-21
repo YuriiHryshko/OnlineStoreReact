@@ -8,7 +8,7 @@ const UsersList = ({currentUser}) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/users?search=${searchTerm}`);
+      const response = await axios.get(`https://my-1store.herokuapp.com/api/v1/users?search=${searchTerm}`);
       setUsers(response.data);
     } catch (error) {
       console.error(error);
@@ -20,7 +20,7 @@ const UsersList = ({currentUser}) => {
       console.log("Cannot delete the current user");
       return;
     }
-    axios.delete(`http://localhost:3000/api/v1/users/${userId}`)
+    axios.delete(`https://my-1store.herokuapp.com/api/v1/users/${userId}`)
         .then(() => {
             const updatedItemList = users.filter((item) => item.id !== userId);
             setUsers(updatedItemList);

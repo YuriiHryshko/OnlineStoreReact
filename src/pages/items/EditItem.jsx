@@ -14,7 +14,7 @@ const EditItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/v1/items/${id}`);
+        const response = await axios.get(`https://my-1store.herokuapp.com/api/v1/items/${id}`);
         setName(response.data.name);
         setPrice(response.data.price);
         setDescription(response.data.description);
@@ -35,7 +35,7 @@ const EditItem = () => {
       description: description,
     };
 
-    axios.put(`http://localhost:3000/api/v1/items/${id}`, updatedItem)
+    axios.put(`https://my-1store.herokuapp.com/api/v1/items/${id}`, updatedItem)
       .then((response) => {
         console.log(response.data);
         navigate("/");
