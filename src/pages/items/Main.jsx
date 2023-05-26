@@ -37,6 +37,10 @@ function Main({currentUser, loggedInStatus, handleLogout}) {
     setSearchTerm(e.target.value);
   };
 
+  if (!items) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <body>
       <div className="px-3 py-2 border-bottom mb-3">
