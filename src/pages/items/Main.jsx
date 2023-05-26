@@ -37,7 +37,7 @@ function Main({currentUser, loggedInStatus, handleLogout}) {
     setSearchTerm(e.target.value);
   };
 
-  if (!items) {
+  if (items.length === 0) {
     return <div>Loading...</div>;
   }
 
