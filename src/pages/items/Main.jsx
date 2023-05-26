@@ -9,6 +9,7 @@ const API_URL = 'https://my-1store.herokuapp.com/api/v1/items';
 function Main({currentUser, loggedInStatus, handleLogout}) {
   const [searchTerm, setSearchTerm] = useState('');
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -18,6 +19,7 @@ function Main({currentUser, loggedInStatus, handleLogout}) {
         }
       });
       setItems(response.data);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -30,6 +32,7 @@ function Main({currentUser, loggedInStatus, handleLogout}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     await fetchData();
   };
 
@@ -37,7 +40,7 @@ function Main({currentUser, loggedInStatus, handleLogout}) {
     setSearchTerm(e.target.value);
   };
 
-  if (items.length === 0) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
